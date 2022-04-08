@@ -4,7 +4,7 @@ const flyingSpeed = 10;
 const gravity = 8;
 const floorHeight = 75;
 let maxHeight = 400;
-let currentHeight = floorHeight;
+export let currentHeight = floorHeight;
 dragon.style.bottom = `${floorHeight}px`;
 
 export const fly = () => {

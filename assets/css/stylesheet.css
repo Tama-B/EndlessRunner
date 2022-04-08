@@ -11,14 +11,16 @@ body {
 }
 
 .game_container {
-    width: 90vw;
+    width: 1000px;
     height: 500px;
     position: relative;
     margin: 0 auto;
+    overflow: hidden;
 }
 
 .sky {
-    width: 90vw;
+    width: 1000px;
+
     height: 400px;
     background-color: lightblue;
     position: absolute;
@@ -29,7 +31,7 @@ body {
 }
 
 .bottom {
-    width: 90vw;
+    width: 1000px;
     height: 100px;
     background-color: darkolivegreen;
     position: absolute;
@@ -45,7 +47,7 @@ body {
     background-color: greenyellow;
     border-top: 5px dashed red;
     position: absolute;
-    left: 100px;
+    left: 120px;
 }
 
 .dragon_neck {
@@ -88,7 +90,9 @@ body {
 }
 
 .obstacle {
-    width: 10px;
-    height: 50px;
+    position: absolute;
+    width: 40px;
+    height: 100px;
     background-color: red;
+    bottom: 60px;
 }
