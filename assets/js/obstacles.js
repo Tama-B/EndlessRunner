@@ -9,11 +9,17 @@ const obstacleDespawnPosition = -40;
 const obstacleSpeed = 5;
 let isSpawned = false;
 
+const randomizeObstacleHeight = (min, max) => {
+    return Math.random() * (max - min) + min;
+}
+
 
 
 const spawnObstacle = () => {
     let obstacle = document.createElement('div');
     obstacle.classList.add('obstacle');
+    let obstacleHeight = randomizeObstacleHeight(100, 300);
+    obstacle.style.height = `${obstacleHeight}px`;
     gameContainer.appendChild(obstacle);
     obstacle.style.left = `${obstacleStartPosition}px`;
     isSpawned = true;
