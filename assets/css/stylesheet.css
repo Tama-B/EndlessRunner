@@ -73,14 +73,46 @@ body {
     z-index: 5;
 }
 
+.dragon_wing {
+    position: absolute;
+    width: 50px;
+    height: 30px;
+    background-color: red;
+    left: 20px;
+    top: 5px;
+}
+
+.wing_circle {
+    position: absolute;
+    height: 33px;
+    width: 33px;
+    background-color: greenyellow;
+    border-radius: 50%;
+    top: 3px;
+    left: -15px;
+}
+
+.wing_circle2 {
+    position: absolute;
+    height: 28px;
+    width: 33px;
+    background-color: greenyellow;
+    border-radius: 50%;
+    top: 12px;
+    left: 13px;
+}
+
 .dragon_neck {
     position: absolute;
     background-color: greenyellow;
-    height: 90px;
+    height: 70px;
     width: 20px;
     bottom: 0;
     left: 100px;
     z-index: 5;
+    border-bottom-right-radius: 10px;
+    border-right: 4px solid yellow;
+
 }
 
 .dragon_head {
@@ -95,13 +127,93 @@ body {
     z-index: 5;
 }
 
+.dragon_horn_left {
+    position: absolute;
+    width: 4px;
+    height: 15px;
+    background-color: grey;
+    bottom: 20px;
+}
+
+.dragon_horn_right {
+    position: absolute;
+    width: 4px;
+    height: 15px;
+    background-color: grey;
+    bottom: 20px;
+    left: 10px;
+}
+
 .dragon_eye {
     position: absolute;
-    width: 5px;
-    height: 5px;
-    background-color: black;
-    left: 20px;
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    left: 10px;
     top: 5px;
+}
+
+.dragon_pupil {
+    position: absolute;
+    top: 1.5px;
+    left: 1.5px;
+    width: 4px;
+    height: 4px;
+    background-color: darkslategrey;
+}
+
+.dragon_nose_left {
+    position: absolute;
+    width: 5px;
+    height: 4px;
+    background-color: green;
+    top: 3px;
+    right: 5px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+}
+
+.dragon_nostril {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background-color: darkslategrey;
+    bottom: 0;
+    left: 1px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+
+}
+
+.dragon_foot_right {
+    position: absolute;
+    background-color: greenyellow;
+    width: 10px;
+    height: 10px;
+    right: 5px;
+    bottom: -10px;
+}
+
+.rght_ft_rnng {
+    animation-name: dragonRunning;
+    animation-duration: 300ms;
+    animation-iteration-count: infinite;
+}
+
+
+.dragon_foot_left {
+    position: absolute;
+    background-color: greenyellow;
+    width: 10px;
+    height: 10px;
+    left: 10px;
+    bottom: -10px;
+}
+
+.lft_ft_rnng {
+    animation-name: dragonRunning2;
+    animation-duration: 300ms;
+    animation-iteration-count: infinite;
 }
 
 .dragon_tail {
@@ -115,7 +227,39 @@ body {
     z-index: 5;
 }
 
+
+
 .obstacle {
     position: absolute;
     bottom: 60px;
+}
+
+/*//////////////////////////ANimation*/
+
+@keyframes dragonRunning {
+    from {
+        right: 5px;
+    }
+
+    50% {
+        right: 2px;
+    }
+
+    to {
+        right: 5px;
+    }
+}
+
+@keyframes dragonRunning2 {
+    from {
+        left: 10px;
+    }
+
+    50% {
+        left: 13px
+    }
+
+    to {
+        left: 10px;
+    }
 }

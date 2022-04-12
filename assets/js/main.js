@@ -1,5 +1,6 @@
 import { fly } from "./abilities.js";
 import { handleObstacles, startObstacleLoop, stopObstacleSpawning, clearObstacles } from "./obstacles.js";
+import { setAnimations } from "./animation.js";
 
 const gameContainer = document.querySelector('.game_container');
 const body = document.querySelector('body');
@@ -10,6 +11,7 @@ let intervalId
 const gameloop = () => {
     fly()
     handleObstacles();
+    setAnimations();
 }
 
 const startGameLoop = () => {
