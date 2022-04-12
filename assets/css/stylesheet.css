@@ -18,9 +18,27 @@ body {
     overflow: hidden;
 }
 
+.overlay {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1000px;
+    height: 500px;
+    background-color: rgba(0, 0, 0, 0.438);
+    z-index: 100;
+    top: 0;
+    left: 0;
+}
+
+.start_btn {
+    font-size: 3.5rem;
+    width: 7ch;
+    height: 3ch;
+}
+
 .sky {
     width: 1000px;
-
     height: 400px;
     background-color: lightblue;
     position: absolute;
@@ -91,7 +109,5 @@ body {
 
 .obstacle {
     position: absolute;
-    width: 40px;
-    background-color: red;
     bottom: 60px;
 }
