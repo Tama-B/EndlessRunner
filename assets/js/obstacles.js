@@ -47,14 +47,26 @@ let randomObstacleNumber = 0;
 
 
 //Create Obstacles and add them to DOM
+// export const startObstacleLoop = () => {
+//     intervalId = setInterval(() => {
+//         randomObstacleNumber = randomNumberBetween(2000, 4000);
+//         const obs = new Obstacle(randomNumberBetween(100, 300), randomNumberBetween(40, 100), randomColor());
+//         const htmlElement = obs.spawn();
+//         let obstacleElementAndObject = [htmlElement, obs];
+//         spawnedObstacles.push(obstacleElementAndObject);
+//     }, 4000);
+
+// }
+
 export const startObstacleLoop = () => {
-    intervalId = setInterval(() => {
+    intervalId = setTimeout(() => {
         randomObstacleNumber = randomNumberBetween(2000, 4000);
-        const obs = new Obstacle(randomNumberBetween(100, 300), randomNumberBetween(40, 100), randomColor());
+        const obs = new Obstacle(randomNumberBetween(100, 300), randomNumberBetween(40, 100), 'blue');
         const htmlElement = obs.spawn();
         let obstacleElementAndObject = [htmlElement, obs];
         spawnedObstacles.push(obstacleElementAndObject);
-    }, 4000);
+        startObstacleLoop();
+    }, randomNumberBetween(2000, 5000));
 
 }
 

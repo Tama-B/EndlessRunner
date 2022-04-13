@@ -6,10 +6,14 @@
 
 body {
     display: flex;
+    flex-direction: column;
     height: 100vh;
+    justify-content: center;
     align-items: center;
 }
 
+
+/*////////////////////////Game container & overlay & displays*/
 .game_container {
     width: 1000px;
     height: 500px;
@@ -41,6 +45,26 @@ body {
     display: none;
 }
 
+.ui_container {
+    display: flex;
+    gap: 200px;
+}
+
+.flying_power_container {
+    position: relative;
+    width: 202px;
+    height: 50px;
+    border: 1px solid black;
+}
+
+.flying_power {
+    position: absolute;
+    background-color: red;
+    height: 48px;
+}
+
+
+/*///////////////////////////Surrounding*/
 .sky {
     width: 1000px;
     height: 400px;
@@ -63,6 +87,8 @@ body {
     top: 3 00px;
 }
 
+
+/*//////////////////////////////Dragon*/
 .dragon {
     width: 100px;
     height: 50px;
@@ -80,6 +106,12 @@ body {
     background-color: red;
     left: 20px;
     top: 5px;
+}
+
+.drg_wng_flng {
+    animation-name: dragonFlying;
+    animation-duration: 400ms;
+    animation-iteration-count: infinite;
 }
 
 .wing_circle {
@@ -196,7 +228,7 @@ body {
 
 .rght_ft_rnng {
     animation-name: dragonRunning;
-    animation-duration: 300ms;
+    animation-duration: 400ms;
     animation-iteration-count: infinite;
 }
 
@@ -211,8 +243,8 @@ body {
 }
 
 .lft_ft_rnng {
-    animation-name: dragonRunning2;
-    animation-duration: 300ms;
+    animation-name: dragonRunning;
+    animation-duration: 400ms;
     animation-iteration-count: infinite;
 }
 
@@ -227,39 +259,40 @@ body {
     z-index: 5;
 }
 
-
+/*////////////////////////////////////////////Obstacle*/
 
 .obstacle {
     position: absolute;
     bottom: 60px;
 }
 
+
 /*//////////////////////////ANimation*/
 
 @keyframes dragonRunning {
     from {
-        right: 5px;
+        transform: translateY(0) translateX(0);
     }
 
     50% {
-        right: 2px;
+        transform: translateY(-2px) translateX(-1px);
     }
 
     to {
-        right: 5px;
+        transform: translateY(0) translateX(0);
     }
 }
 
-@keyframes dragonRunning2 {
+@keyframes dragonFlying {
     from {
-        left: 10px;
+        transform: skewY(0)
     }
 
     50% {
-        left: 13px
+        transform: skewY(10deg);
     }
 
     to {
-        left: 10px;
+        transform: skewY(0);
     }
 }
