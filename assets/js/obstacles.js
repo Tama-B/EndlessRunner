@@ -1,11 +1,12 @@
 import { currentHeight } from "./abilities.js";
 import { endGame } from "./main.js";
+import { gameSpeed } from "./canvas.js";
 
 const gameContainer = document.querySelector('.game_container');
 
 const obstacleStartPosition = 1040;
 const obstacleDespawnPosition = -100;
-const obstacleSpeed = 5;
+const obstacleSpeed = gameSpeed;
 let intervalId
 
 //Create random number for obstacle height, width etc.
