@@ -30,9 +30,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     width: 1000px;
     height: 500px;
-    background-color: rgba(0, 0, 0, 0.438);
+    background-color: rgba(255, 255, 255, 0.429);
     z-index: 100;
     top: 0;
     left: 0;
@@ -43,6 +44,11 @@ body {
     padding: 5px;
     width: fit-content;
     height: fit-content;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.2rem;
 }
 
 .hidden {
@@ -62,6 +68,7 @@ body {
     border: 2px solid black;
     line-height: 50px;
     text-align: center;
+    background-color: white;
 }
 
 .timer_container {
@@ -69,6 +76,7 @@ body {
     width: 202px;
     line-height: 50px;
     text-align: center;
+    background-color: white;
 }
 
 .flying_power {
