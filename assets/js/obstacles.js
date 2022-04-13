@@ -66,7 +66,7 @@ export const startObstacleLoop = () => {
         let obstacleElementAndObject = [htmlElement, obs];
         spawnedObstacles.push(obstacleElementAndObject);
         startObstacleLoop();
-    }, randomNumberBetween(2000, 5000));
+    }, randomNumberBetween(3000, 5000));
 
 }
 
