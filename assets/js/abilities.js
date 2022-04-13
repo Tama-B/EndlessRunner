@@ -2,7 +2,7 @@ const dragon = document.querySelector('.dragon');
 let isFlying = false;
 const flyingSpeed = 10;
 const gravity = 8;
-const floorHeight = 75;
+const floorHeight = 64;
 let maxHeight = 400;
 export let currentHeight = floorHeight;
 dragon.style.bottom = `${floorHeight}px`;
@@ -17,6 +17,7 @@ export const fly = () => {
         currentHeight >= floorHeight ||
         flyingPower == 0) {
         currentHeight -= gravity;
+        if (currentHeight < floorHeight) currentHeight = floorHeight;
         dragon.style.bottom = `${currentHeight}px`;
     } else if (isFlying == true &&
         currentHeight <= maxHeight) {

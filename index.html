@@ -8,22 +8,23 @@
     <title>Document</title>
     <link rel="stylesheet" href="assets/css/stylesheet.css">
     <script type="module" src="assets/js/main.js" defer></script>
+    <script type="module" src="assets/js/canvas.js" defer></script>
 </head>
 
 <body>
     <div class="ui_container">
         <div class="flying_power_container">
+            <div class="power_text">Power</div>
             <div class="flying_power"></div>
         </div>
-        <div>Your time:<span class="timer_display">00:00</span></div>
+        <div class="timer_container">Your time:<span class="timer_display">00:00</span></div>
     </div>
 
     <div class="game_container">
         <div class="overlay">
             <button class="start_btn">START</button>
         </div>
-        <div class="sky"></div>
-        <div class="bottom"></div>
+        <canvas id="canvas1"></canvas>
         <div class="dragon">
             <div class="dragon_wing">
                 <div class="wing_circle"></div>

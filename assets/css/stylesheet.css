@@ -2,6 +2,8 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: monospace;
+    font-size: 1.1rem;
 }
 
 body {
@@ -10,6 +12,7 @@ body {
     height: 100vh;
     justify-content: center;
     align-items: center;
+    background-color: darkslategray;
 }
 
 
@@ -36,7 +39,8 @@ body {
 }
 
 .start_btn {
-    font-size: 3.5rem;
+    font-size: 3rem;
+    padding: 5px;
     width: fit-content;
     height: fit-content;
 }
@@ -48,19 +52,36 @@ body {
 .ui_container {
     display: flex;
     gap: 200px;
+    margin-bottom: 20px;
 }
 
 .flying_power_container {
     position: relative;
-    width: 202px;
+    width: 204px;
     height: 50px;
-    border: 1px solid black;
+    border: 2px solid black;
+    line-height: 50px;
+    text-align: center;
+}
+
+.timer_container {
+    border: 2px solid black;
+    width: 202px;
+    line-height: 50px;
+    text-align: center;
 }
 
 .flying_power {
     position: absolute;
     background-color: red;
-    height: 48px;
+    height: 46px;
+}
+
+.power_text {
+    position: absolute;
+    z-index: 10;
+    left: 50%;
+    transform: translate(-50%);
 }
 
 
@@ -79,7 +100,7 @@ body {
 .bottom {
     width: 1000px;
     height: 100px;
-    background-color: darkolivegreen;
+    background-image: url(../img/grass.png);
     position: absolute;
     bottom: 0;
     right: 0;
@@ -92,7 +113,7 @@ body {
 .dragon {
     width: 100px;
     height: 50px;
-    background-color: greenyellow;
+    background-color: turquoise;
     border-top: 5px dashed red;
     position: absolute;
     left: 120px;
@@ -118,7 +139,7 @@ body {
     position: absolute;
     height: 33px;
     width: 33px;
-    background-color: greenyellow;
+    background-color: turquoise;
     border-radius: 50%;
     top: 3px;
     left: -15px;
@@ -128,7 +149,7 @@ body {
     position: absolute;
     height: 28px;
     width: 33px;
-    background-color: greenyellow;
+    background-color: turquoise;
     border-radius: 50%;
     top: 12px;
     left: 13px;
@@ -136,7 +157,7 @@ body {
 
 .dragon_neck {
     position: absolute;
-    background-color: greenyellow;
+    background-color: turquoise;
     height: 70px;
     width: 20px;
     bottom: 0;
@@ -149,7 +170,7 @@ body {
 
 .dragon_head {
     position: absolute;
-    background-color: greenyellow;
+    background-color: turquoise;
     height: 20px;
     width: 45px;
     bottom: 60px;
@@ -219,7 +240,7 @@ body {
 
 .dragon_foot_right {
     position: absolute;
-    background-color: greenyellow;
+    background-color: turquoise;
     width: 10px;
     height: 10px;
     right: 5px;
@@ -235,7 +256,7 @@ body {
 
 .dragon_foot_left {
     position: absolute;
-    background-color: greenyellow;
+    background-color: turquoise;
     width: 10px;
     height: 10px;
     left: 10px;
@@ -250,7 +271,7 @@ body {
 
 .dragon_tail {
     position: absolute;
-    background-color: greenyellow;
+    background-color: turquoise;
     border-top: 5px dashed red;
     width: 50px;
     height: 10px;
@@ -263,9 +284,23 @@ body {
 
 .obstacle {
     position: absolute;
-    bottom: 60px;
+    border: 2px solid black;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    bottom: 53px;
 }
 
+/*////////////////////////////////CANVAS*/
+
+#canvas1 {
+    width: 1000px;
+    height: 500px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+}
 
 /*//////////////////////////ANimation*/
 
