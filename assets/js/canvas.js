@@ -17,30 +17,54 @@ backgroundLayer4.src = 'assets/img/layer-4.png';
 const backgroundLayer5 = new Image();
 backgroundLayer5.src = 'assets/img/layer-5.png';
 
-let x = 0;
-let x2 = 1000;
+class Layer {
+    constructor(image, speedModifier) {
+        this.x = 0;
+        this.y = 0;
+        this.width = 1000;
+        this.height = 500;
+        this.x2 = this.width;
+        this.image = image;
+        this.speedModifier = speedModifier;
+        this.speed = gameSpeed * this.speedModifier;
+    }
+    update() {
+
+        if (this.x <= -this.width) {
+            this.x = this.width + this.x2 - this.speed;
+        }
+        if (this.x2 <= -this.width) {
+            this.x2 = this.width + this.x - this.speed;
+        }
+        this.x = Math.floor(this.x - this.speed);
+        this.x2 = Math.floor(this.x2 - this.speed);
+    }
+
+    draw() {
+        ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
+        ctx.drawImage(this.image, this.x2, this.y, this.width, this.height);
+    }
+}
+
+const layer1 = new Layer(backgroundLayer1, 0.2);
+const layer2 = new Layer(backgroundLayer2, 0.4);
+const layer3 = new Layer(backgroundLayer3, 0.6);
+const layer4 = new Layer(backgroundLayer4, 1);
+const layer5 = new Layer(backgroundLayer5, 0.8);
+
+const gameObjects = [layer1, layer2, layer3, layer4, layer5];
 
 export const animate = () => {
-    ctx.drawImage(backgroundLayer1, 0, 0);
-    ctx.drawImage(backgroundLayer2, 0, 0);
-    ctx.drawImage(backgroundLayer3, 0, 0);
-    ctx.drawImage(backgroundLayer4, 0, 0);
-    ctx.drawImage(backgroundLayer5, 0, 0);
+    gameObjects.forEach(object => {
+        object.draw();
+    });
     requestAnimationFrame(animate);
     if (isGameStarted == false) return
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-    ctx.drawImage(backgroundLayer1, x, 0);
-    ctx.drawImage(backgroundLayer1, x2, 0);
-    ctx.drawImage(backgroundLayer2, x, 0);
-    ctx.drawImage(backgroundLayer2, x2, 0);
-    ctx.drawImage(backgroundLayer3, x, 0);
-    ctx.drawImage(backgroundLayer3, x2, 0);
-    ctx.drawImage(backgroundLayer4, x, 0);
-    ctx.drawImage(backgroundLayer4, x2, 0);
-    ctx.drawImage(backgroundLayer5, x, 0);
-    ctx.drawImage(backgroundLayer5, x2, 0);
-    if (x < -1000) x = 1000 + x2 - gameSpeed;
-    x -= gameSpeed;
-    if (x2 < -1000) x2 = 1000 + x - gameSpeed;
-    x2 -= gameSpeed;
+    gameObjects.forEach(object => {
+        object.update();
+        object.draw();
+    })
+
 };
+

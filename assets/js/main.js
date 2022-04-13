@@ -49,10 +49,8 @@ const startGame = () => {
     startGameLoop();
     startObstacleLoop();
     startStopWatch();
-    console.log('Game started');
     overlay.classList.add('hidden');
     startBtn.disabled = true;
-
 }
 
 animate();
@@ -61,7 +59,6 @@ startBtn.addEventListener('click', startGame);
 
 const stopGameLoop = () => {
     clearInterval(intervalId);
-    console.log('You failed!');
 }
 
 export const endGame = () => {

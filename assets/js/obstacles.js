@@ -6,7 +6,7 @@ const gameContainer = document.querySelector('.game_container');
 
 const obstacleStartPosition = 1040;
 const obstacleDespawnPosition = -100;
-const obstacleSpeed = gameSpeed;
+const obstacleSpeed = gameSpeed + 0.5;
 let intervalId
 
 //Create random number for obstacle height, width etc.
@@ -39,30 +39,15 @@ class Obstacle {
         element.style.left = `${obstacleStartPosition}px`;
         return element;
     }
-
 }
 
 let spawnedObstacles = [];
-
 let randomObstacleNumber = 0;
-
-
-//Create Obstacles and add them to DOM
-// export const startObstacleLoop = () => {
-//     intervalId = setInterval(() => {
-//         randomObstacleNumber = randomNumberBetween(2000, 4000);
-//         const obs = new Obstacle(randomNumberBetween(100, 300), randomNumberBetween(40, 100), randomColor());
-//         const htmlElement = obs.spawn();
-//         let obstacleElementAndObject = [htmlElement, obs];
-//         spawnedObstacles.push(obstacleElementAndObject);
-//     }, 4000);
-
-// }
 
 export const startObstacleLoop = () => {
     intervalId = setTimeout(() => {
         randomObstacleNumber = randomNumberBetween(2000, 4000);
-        const obs = new Obstacle(randomNumberBetween(100, 300), randomNumberBetween(40, 100), 'blue');
+        const obs = new Obstacle(randomNumberBetween(100, 300), randomNumberBetween(40, 100), '#329800');
         const htmlElement = obs.spawn();
         let obstacleElementAndObject = [htmlElement, obs];
         spawnedObstacles.push(obstacleElementAndObject);
@@ -70,7 +55,6 @@ export const startObstacleLoop = () => {
     }, randomNumberBetween(2000, 5000));
 
 }
-
 
 //Stop spawning obstacles when game is over
 export const stopObstacleSpawning = () => {
@@ -100,16 +84,13 @@ const moveObstacles = () => {
         element[1].currentPosition -= obstacleSpeed;
         element[0].style.left = `${element[1].currentPosition}px`;
     });
-
 }
-
 
 export const handleObstacles = () => {
     moveObstacles();
     detectCollision();
     despawnObstacles();
 }
-
 
 /////////////////////////Collision
 
